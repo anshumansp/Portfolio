@@ -1,0 +1,1 @@
+import{j as e,ar as a}from"./index-f8cfcfa9.js";function s(){return e.jsx("div",{className:"flex justify-center relative top-[50%]",children:e.jsx("img",{className:"h-[250px] w-auto",src:a.img,alt:"computer"})})}export{s as default};
