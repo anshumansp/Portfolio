@@ -203,28 +203,28 @@ const testimonials = [
 ];
 
 const projects = [
-  {
-    name: "Snugstaff",
-    description:
-      "Snugstaff is a platform catering to businesses, providing short-term property renting solutions same as Airbnb. It is a startup running up and I built the frontend using my React and MUI skills.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "javascript",
-        color: "green-text-gradient",
-      },
-      {
-        name: "MUI",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: snugstaff,
-    webpage_link: "https://snugstaff.com/",
-    source_code_link: "https://github.com/anshumansp?tab=repositories",
-  },
+  // {
+  //   name: "Snugstaff",
+  //   description:
+  //     "Snugstaff is a platform catering to businesses, providing short-term property renting solutions same as Airbnb. It is a startup running up and I built the frontend using my React and MUI skills.",
+  //   tags: [
+  //     {
+  //       name: "react",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "javascript",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "MUI",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: snugstaff,
+  //   webpage_link: "https://snugstaff.com/",
+  //   source_code_link: "https://github.com/anshumansp?tab=repositories",
+  // },
   {
     name: "Corsrex",
     description:
