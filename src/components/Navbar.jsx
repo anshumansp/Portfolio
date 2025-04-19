@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -82,6 +82,14 @@ const Navbar = () => {
           >
             <FaLinkedin size={22} />
           </a>
+          <a
+            href="https://www.youtube.com/@thepixelizesolution"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-red-500 transition-colors duration-300"
+          >
+            <FaYoutube size={22} />
+          </a>
         </div>
 
         {/* Mobile Menu */}
@@ -131,6 +139,14 @@ const Navbar = () => {
                   className="text-white hover:text-[#c026d3] transition-colors duration-300"
                 >
                   <FaLinkedin size={18} />
+                </a>
+                <a
+                  href="https://www.youtube.com/@thepixelizesolution"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-red-500 transition-colors duration-300"
+                >
+                  <FaYoutube size={18} />
                 </a>
               </div>
             </ul>

@@ -20,22 +20,24 @@ const ContentCreator = () => {
       </motion.div>
 
       <div className="flex flex-col items-center">
-        {/* Larger YouTube Video Embed */}
+        {/* YouTube Video Embed - Slightly Smaller */}
         <motion.div
           variants={fadeIn("up", "spring", 0.3, 0.75)}
-          className="w-full max-w-5xl aspect-video rounded-xl overflow-hidden shadow-2xl mb-12"
+          className="w-full max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl mb-12 md:px-8"
         >
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/8Ids9hNY-7U?si=1gyKHVpR828cHFy_"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className="w-full h-full"
-          ></iframe>
+          <div className="relative w-full h-full p-1 bg-gradient-to-r from-red-600 to-red-800 rounded-xl">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/8Ids9hNY-7U?si=1gyKHVpR828cHFy_"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full rounded-lg"
+            ></iframe>
+          </div>
         </motion.div>
 
         {/* Simplified content with just one point */}

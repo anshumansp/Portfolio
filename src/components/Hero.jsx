@@ -5,9 +5,17 @@ import MobileContext from "../context/mobileContext";
 
 const Hero = () => {
   const isMobile = useContext(MobileContext);
+  
+  const scrollToWork = (e) => {
+    e.preventDefault();
+    const workSection = document.getElementById("work");
+    if (workSection) {
+      workSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <section className="relative w-full min-h-screen mx-auto flex items-center justify-center">
+    <section className="relative w-full min-h-screen mx-auto flex items-center justify-center pt-16">
       {/* Darker background gradient */}
       <div className="absolute inset-0 bg-black"></div>
 
@@ -30,31 +38,26 @@ const Hero = () => {
         <div className="flex flex-col items-center text-center">
           {/* Main heading with modern animation */}
           <motion.h1
-            className={`${styles.heroHeadText} text-white mb-8 text-center`}
+            className="text-white mb-8 text-center mt-8 md:mt-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-              Expert Web Developer &
-            </span>
-            <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-white">
-              AI Specialist
-            </span>
+            <div className="text-[28px] xs:text-[32px] sm:text-[38px] md:text-[44px] font-bold tracking-wider">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+                Code. Create. Conquer.
+              </span>
+            </div>
           </motion.h1>
 
           {/* Subheading */}
           <motion.p
-            className={`${styles.heroSubText} text-gray-300 max-w-3xl mx-auto mb-8`}
+            className="text-gray-300 text-[18px] sm:text-[20px] font-medium max-w-3xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            I design and build high-performance, modern and minimalistic
-            websites that drive results and help your business grow.
-            <br className="hidden md:block" />
-            No BS. Just Results.
+            Powerful Solutions. Real Results.
           </motion.p>
 
           {/* CTA button */}
@@ -63,12 +66,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <a
-              href="#work"
+            <button
+              onClick={scrollToWork}
               className="bg-gradient-to-r from-gray-800 to-white text-black font-medium py-3 px-8 rounded-lg transition-all duration-300 inline-block hover:shadow-lg hover:shadow-white/20"
             >
               View My Work
-            </a>
+            </button>
           </motion.div>
 
           {/* Trust badges/social proof - optional */}
