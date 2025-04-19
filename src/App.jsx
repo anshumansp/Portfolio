@@ -4,50 +4,17 @@ import { Navbar } from "./components";
 import MobileState from "./context/MobileState";
 import LoadingSpinner from "./components/LoadingSpinner";
 
-// Lazy load Hero with priority
+// Lazy load components without artificial delays
 const Hero = lazy(() => import("./components/Hero"));
-
-// Lazy load custom components
 const ProjectSlider = lazy(() => import("./components/ProjectSlider"));
 const ContentCreator = lazy(() => import("./components/ContentCreator"));
-
-// Lazy load other components with lower priority
-const About = lazy(() =>
-  import("./components/About").then((module) => {
-    // Artificial delay for staggered loading to improve perceived performance
-    return new Promise((resolve) => setTimeout(() => resolve(module), 100));
-  })
-);
-const Contact = lazy(() =>
-  import("./components/Contact").then((module) => {
-    return new Promise((resolve) => setTimeout(() => resolve(module), 200));
-  })
-);
-const Experience = lazy(() =>
-  import("./components/Experience").then((module) => {
-    return new Promise((resolve) => setTimeout(() => resolve(module), 150));
-  })
-);
-const Feedbacks = lazy(() =>
-  import("./components/Feedbacks").then((module) => {
-    return new Promise((resolve) => setTimeout(() => resolve(module), 250));
-  })
-);
-const Tech = lazy(() =>
-  import("./components/Tech").then((module) => {
-    return new Promise((resolve) => setTimeout(() => resolve(module), 180));
-  })
-);
-const Works = lazy(() =>
-  import("./components/Works").then((module) => {
-    return new Promise((resolve) => setTimeout(() => resolve(module), 220));
-  })
-);
-const StarsCanvas = lazy(() =>
-  import("./components/canvas/Stars").then((module) => {
-    return new Promise((resolve) => setTimeout(() => resolve(module), 300));
-  })
-);
+const About = lazy(() => import("./components/About"));
+const Contact = lazy(() => import("./components/Contact"));
+const Experience = lazy(() => import("./components/Experience"));
+const Feedbacks = lazy(() => import("./components/Feedbacks"));
+const Tech = lazy(() => import("./components/Tech"));
+const Works = lazy(() => import("./components/Works"));
+const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
 
 // Custom component for section-specific loading
 const SectionLoader = ({ children, label }) => (

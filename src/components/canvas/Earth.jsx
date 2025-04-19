@@ -32,7 +32,10 @@ const EarthCanvas = () => {
         const [entry] = entries;
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.1,
+        rootMargin: "300px 0px", // Increased to preload earlier
+      }
     );
 
     if (canvasRef.current) {

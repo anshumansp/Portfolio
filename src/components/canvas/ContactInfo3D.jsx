@@ -1,4 +1,4 @@
-import React, { useRef, useState, Suspense } from "react";
+import React, { useRef, useState, Suspense, useEffect } from "react";
 import { useFrame, Canvas } from "@react-three/fiber";
 import { Text, Float, OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../Loader";
@@ -116,6 +116,32 @@ const ContactInfo3D = () => {
 // This is the wrapper component that provides the Canvas
 const ContactInfo3DCanvas = () => {
   const [isError, setIsError] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const canvasRef = useRef();
+
+  useEffect(() => {
+    // Use Intersection Observer to only render when visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "300px 0px", // Preload when within 300px of viewport
+      }
+    );
+
+    if (canvasRef.current) {
+      observer.observe(canvasRef.current);
+    }
+
+    return () => {
+      if (canvasRef.current) {
+        observer.unobserve(canvasRef.current);
+      }
+    };
+  }, []);
 
   // Handle errors in the 3D rendering
   const handleError = () => {
@@ -137,29 +163,31 @@ const ContactInfo3DCanvas = () => {
   }
 
   return (
-    <div className="w-full h-full">
-      <Canvas
-        camera={{ position: [0, 0, 5], fov: 50 }}
-        onError={handleError}
-        gl={{
-          antialias: true,
-          powerPreference: "high-performance",
-          failIfMajorPerformanceCaveat: false,
-        }}
-      >
-        <Suspense fallback={<CanvasLoader />}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <ContactInfo3D />
-          <OrbitControls
-            enableZoom={false}
-            rotateSpeed={0.5}
-            enablePan={false}
-            enableDamping={true}
-            dampingFactor={0.1}
-          />
-        </Suspense>
-      </Canvas>
+    <div ref={canvasRef} className="w-full h-full">
+      {isVisible && (
+        <Canvas
+          camera={{ position: [0, 0, 5], fov: 50 }}
+          onError={handleError}
+          gl={{
+            antialias: true,
+            powerPreference: "high-performance",
+            failIfMajorPerformanceCaveat: false,
+          }}
+        >
+          <Suspense fallback={<CanvasLoader />}>
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} />
+            <ContactInfo3D />
+            <OrbitControls
+              enableZoom={false}
+              rotateSpeed={0.5}
+              enablePan={false}
+              enableDamping={true}
+              dampingFactor={0.1}
+            />
+          </Suspense>
+        </Canvas>
+      )}
     </div>
   );
 };
