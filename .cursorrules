@@ -1,0 +1,31 @@
+# Project Intelligence
+
+## Code Style
+- Use functional components with hooks for React components
+- Follow a clean, modular approach to component design
+- Use descriptive variable and function names
+- Maintain consistent indentation and formatting
+- Use Tailwind CSS utility classes for styling
+- Keep component files focused on a single responsibility
+
+## Project Structure
+- `/src` - Main source code directory
+- `/public` - Static assets and public files
+- `/assets` - Project assets (images, icons, etc.)
+- `/desktop_pc` - 3D model assets for desktop version
+- `/planet` - 3D model assets for planet visualization
+
+## Implementation Patterns
+- React components use .jsx extension
+- Component organization follows feature-based approach
+- 3D elements implemented using Three.js/React Three Fiber
+- Responsive design implemented through Tailwind breakpoints
+- Animations created with Framer Motion
+
+## Workflow Preferences
+- Develop components in isolation before integration
+- Test on multiple viewports for responsive design
+- Optimize assets before production builds
+- Use Git for version control with descriptive commit messages
+
+This file will be updated as new patterns and preferences are discovered during the development process. 
