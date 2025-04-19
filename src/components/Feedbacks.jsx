@@ -30,7 +30,7 @@ const FeedbackCard = ({
         isActive ? "z-10" : "-z-10"
       }`}
     >
-      <div className="bg-gradient-to-br from-[#1e1b4b] via-[#2d1b4b] to-[#3b1d59] rounded-xl overflow-hidden shadow-lg p-6 md:p-8 border border-[#915eff]/20 h-full">
+      <div className="bg-gradient-to-br from-[#1a1a2d] via-[#252540] to-[#2d2d4a] rounded-xl overflow-hidden shadow-lg p-6 md:p-8 border border-[#915eff]/20 h-full">
         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start h-full">
           {/* Profile image */}
           <div className="flex-shrink-0">
@@ -188,15 +188,15 @@ const Feedbacks = () => {
   };
 
   return (
-    <div className="pt-12 pb-20">
+    <div className="pt-0 pb-16">
       <div className="max-w-5xl mx-auto px-6">
         <motion.div variants={textVariant()}>
-          <p className={`${styles.sectionSubText} my-5`}>What People Say</p>
-          <h2 className={`${styles.sectionHeadText} mt-6`}>Testimonials.</h2>
+          <p className={`${styles.sectionSubText}`}>What People Say</p>
+          <h2 className={`${styles.sectionHeadText} mb-8`}>Testimonials.</h2>
         </motion.div>
 
         <div
-          className="relative mt-12"
+          className="relative mt-6"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >

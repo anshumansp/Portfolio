@@ -4,7 +4,21 @@ import { technologies } from "../constants";
 import { textVariant, fadeIn } from "../utils/motion";
 import { styles } from "../styles";
 
-// SVG icons for the new skills
+// SVG icons for skills
+const SkillSection = ({ title, skills }) => {
+  return (
+    <div className="mb-10">
+      <h3 className="text-white text-lg font-semibold mb-4 border-b border-purple-500/30 pb-2">{title}</h3>
+      <div className="flex flex-wrap gap-4">
+        {skills.map((skill, index) => (
+          <SkillCard key={`${title}-${index}`} name={skill.name} icon={skill.icon} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// SVG icons for the special skills
 const PythonIcon = () => (
   <svg viewBox="0 0 128 128" className="w-12 h-12 mx-auto">
     <linearGradient
@@ -78,31 +92,61 @@ const AgenticSystemsIcon = () => (
   </svg>
 );
 
-// Additional skill components
-const additionalSkills = [
-  {
-    name: "Python",
-    icon: <PythonIcon />,
-  },
-  {
-    name: "AI",
-    icon: <AIIcon />,
-  },
-  {
-    name: "Agentic Systems",
-    icon: <AgenticSystemsIcon />,
-  },
+// Frontend skills with icons
+const frontendSkills = [
+  { name: "HTML", icon: "html" },
+  { name: "CSS", icon: "css" },
+  { name: "JavaScript", icon: "javascript" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "React.js", icon: "react" },
+  { name: "Next.js", icon: "next" },
+  { name: "Redux", icon: "redux" },
+  { name: "Three.js", icon: "threejs" },
+];
+
+// Backend skills with icons
+const backendSkills = [
+  { name: "Node.js", icon: "nodejs" },
+  { name: "Express.js", icon: "express" },
+  { name: "Nest.js", icon: "nest" },
+  { name: "Python", icon: <PythonIcon /> },
+  { name: "REST APIs", icon: "rest" },
+  { name: "GraphQL", icon: "graphql" },
+];
+
+// Database and cloud skills
+const dataSkills = [
+  { name: "MongoDB", icon: "mongodb" },
+  { name: "PostgreSQL", icon: "postgres" },
+  { name: "Firebase", icon: "firebase" },
+  { name: "Google Cloud", icon: "gcloud" },
+  { name: "AWS", icon: "aws" },
+  { name: "Vector Databases", icon: "vector" },
+];
+
+// Miscellaneous skills
+const miscSkills = [
+  { name: "Docker", icon: "docker" },
+  { name: "LangChain", icon: "langchain" },
+  { name: "Agentic Systems", icon: <AgenticSystemsIcon /> },
+  { name: "Graph RAG", icon: "rag" },
+  { name: "F", icon: "f" },
 ];
 
 const SkillCard = ({ name, icon }) => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", Math.random() * 0.5, 0.75)}
-      className="w-24 sm:w-28 md:w-32 bg-gradient-to-br from-[#1e1b4b] via-[#2d1b4b] to-[#3b1d59] rounded-xl p-4 flex flex-col items-center justify-center gap-2 border border-[#915eff]/20 shadow-lg shadow-purple-900/5 hover:shadow-purple-900/20 transition-all duration-300 hover:-translate-y-1"
+      className="w-24 sm:w-28 md:w-32 bg-gradient-to-br from-[#2d2d2d] via-[#3a3a3a] to-[#4a4a4a] rounded-xl p-4 flex flex-col items-center justify-center gap-2 border border-[#915eff]/20 shadow-lg shadow-purple-900/5 hover:shadow-purple-900/20 transition-all duration-300 hover:-translate-y-1"
     >
       <div className="h-12 w-12 flex items-center justify-center">
         {typeof icon === "string" ? (
-          <img src={icon} alt={name} className="w-10 h-10 object-contain" />
+          <img 
+            src={technologies.find(t => t.name.toLowerCase().includes(icon.toLowerCase()))?.icon || 
+               "/placeholder-icon.svg"} 
+            alt={name} 
+            className="w-10 h-10 object-contain" 
+          />
         ) : (
           icon
         )}
@@ -122,18 +166,11 @@ const Tech = () => {
         <h2 className={`${styles.sectionHeadText} mt-6`}>Skills.</h2>
       </motion.div>
 
-      <div className="mt-12 flex flex-wrap justify-center gap-6">
-        {technologies.map((technology) => (
-          <SkillCard
-            key={technology.name}
-            name={technology.name}
-            icon={technology.icon}
-          />
-        ))}
-
-        {additionalSkills.map((skill) => (
-          <SkillCard key={skill.name} name={skill.name} icon={skill.icon} />
-        ))}
+      <div className="mt-8">
+        <SkillSection title="FRONT END DEVELOPMENT" skills={frontendSkills} />
+        <SkillSection title="BACK END DEVELOPMENT" skills={backendSkills} />
+        <SkillSection title="DATA PIPELINES" skills={dataSkills} />
+        <SkillSection title="MISCELLANEOUS" skills={miscSkills} />
       </div>
     </>
   );

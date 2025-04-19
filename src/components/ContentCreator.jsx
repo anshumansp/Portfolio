@@ -40,25 +40,13 @@ const ContentCreator = () => {
           variants={fadeIn("up", "spring", 0.4, 0.75)}
           className="text-center max-w-3xl"
         >
-          <div className="flex items-center justify-center mb-8">
-            <div className="bg-gradient-to-r from-purple-500 to-white p-[1px] rounded-full mr-3">
-              <div className="bg-black p-2 rounded-full">
-                <div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-white"></div>
-              </div>
-            </div>
-            <p className="text-gray-300 text-xl">
-              From AI development to modern web frameworks — practical knowledge
-              for developers
-            </p>
-          </div>
-
           <a
             href="https://www.youtube.com/@thepixelizesolution"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-gradient-to-r from-red-600 to-red-800 text-white font-medium py-4 px-10 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-red-500/30 transform hover:-translate-y-1"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-[#1a1a2d] to-[#323250] text-white font-medium py-4 px-8 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:-translate-y-1 border border-purple-500/30"
           >
-            <span className="mr-3 text-lg">Subscribe to Channel</span>
+            <span className="mr-3 text-lg">Subscribe to My Channel</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
