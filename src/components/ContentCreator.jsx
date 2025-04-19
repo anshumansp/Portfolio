@@ -11,7 +11,7 @@ const ContentCreator = () => {
         <p className={`${styles.sectionSubText} my-5`}>
           I create educational content
         </p>
-        <h2 className={`${styles.sectionHeadText} mt-6`}>Content Creator.</h2>
+        <h2 className={`${styles.sectionHeadText} mt-6`}>Content.</h2>
       </motion.div>
 
       <div className="flex flex-col items-center mt-10">

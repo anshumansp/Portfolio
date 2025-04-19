@@ -99,38 +99,38 @@ const frontendSkills = [
   { name: "JavaScript", icon: "javascript" },
   { name: "TypeScript", icon: "typescript" },
   { name: "React.js", icon: "react" },
-  { name: "Next.js", icon: "next" },
+  { name: "Next.js", icon: "/icons/nextjs.svg" },
   { name: "Redux", icon: "redux" },
-  { name: "Three.js", icon: "threejs" },
+  { name: "Three.js", icon: "/icons/threejs.svg" },
 ];
 
 // Backend skills with icons
 const backendSkills = [
   { name: "Node.js", icon: "nodejs" },
-  { name: "Express.js", icon: "express" },
-  { name: "Nest.js", icon: "nest" },
+  { name: "Express.js", icon: "/icons/expressjs.svg" },
+  { name: "Nest.js", icon: "/icons/nestjs.svg" },
   { name: "Python", icon: <PythonIcon /> },
-  { name: "REST APIs", icon: "rest" },
-  { name: "GraphQL", icon: "graphql" },
+  { name: "REST APIs", icon: "/icons/restapi.svg" },
+  { name: "GraphQL", icon: "/icons/graphql.svg" },
 ];
 
 // Database and cloud skills
 const dataSkills = [
   { name: "MongoDB", icon: "mongodb" },
-  { name: "PostgreSQL", icon: "postgres" },
-  { name: "Firebase", icon: "firebase" },
-  { name: "Google Cloud", icon: "gcloud" },
-  { name: "AWS", icon: "aws" },
-  { name: "Vector Databases", icon: "vector" },
+  { name: "PostgreSQL", icon: "/icons/postgres.svg" },
+  { name: "Firebase", icon: "/icons/firebase.svg" },
+  { name: "Google Cloud", icon: "/icons/gcloud.svg" },
+  { name: "AWS", icon: "/icons/aws.svg" },
+  { name: "Vector Databases", icon: "/icons/vector.svg" },
 ];
 
 // Miscellaneous skills
 const miscSkills = [
   { name: "Docker", icon: "docker" },
-  { name: "LangChain", icon: "langchain" },
+  { name: "LangChain", icon: "/icons/langchain.svg" },
   { name: "Agentic Systems", icon: <AgenticSystemsIcon /> },
-  { name: "Graph RAG", icon: "rag" },
-  { name: "F", icon: "f" },
+  { name: "Graph RAG", icon: "/icons/graphrag.svg" },
+  { name: "FastAPI", icon: "/icons/fastapi.svg" },
 ];
 
 const SkillCard = ({ name, icon }) => {
@@ -141,11 +141,16 @@ const SkillCard = ({ name, icon }) => {
     >
       <div className="h-12 w-12 flex items-center justify-center">
         {typeof icon === "string" ? (
-          <img 
-            src={technologies.find(t => t.name.toLowerCase().includes(icon.toLowerCase()))?.icon || 
-               "/placeholder-icon.svg"} 
-            alt={name} 
-            className="w-10 h-10 object-contain" 
+          <img
+            src={
+              icon.startsWith("/")
+                ? icon
+                : technologies.find((t) =>
+                    t.name.toLowerCase().includes(icon.toLowerCase())
+                  )?.icon || "/placeholder-icon.svg"
+            }
+            alt={name}
+            className="w-10 h-10 object-contain"
           />
         ) : (
           icon

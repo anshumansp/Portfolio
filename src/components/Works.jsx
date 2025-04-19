@@ -24,7 +24,7 @@ const ProjectCard = ({
       variants={fadeIn("up", "spring", index * 0.15, 0.75)}
       className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)]"
     >
-      <div className="bg-gradient-to-br from-[#1e1b4b] via-[#2d1b4b] to-[#3b1d59] rounded-2xl overflow-hidden h-full flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/30 border border-[#915eff]/20 hover:border-[#915eff]/30">
+      <div className="bg-gradient-to-br from-[#1a1a2d] via-[#252540] to-[#2d2d4a] rounded-2xl overflow-hidden h-full flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/30 border border-[#915eff]/20 hover:border-[#915eff]/30">
         {/* Project image */}
         <div
           className="relative cursor-pointer h-48 overflow-hidden"
@@ -76,7 +76,7 @@ const ProjectCard = ({
           {/* View Project button */}
           <button
             onClick={handleClick}
-            className="mt-4 py-2 px-4 bg-gradient-to-r from-[#1e1b4b] to-[#3b1d59] text-white text-sm font-medium rounded-lg transition-all duration-300 border border-[#915eff]/20 hover:border-[#915eff]/50 hover:shadow-purple-900/30 flex items-center justify-center gap-2"
+            className="mt-4 py-2 px-4 bg-gradient-to-r from-[#1a1a2d] to-[#2d2d4a] text-white text-sm font-medium rounded-lg transition-all duration-300 border border-[#915eff]/20 hover:border-[#915eff]/50 hover:shadow-purple-900/30 flex items-center justify-center gap-2"
           >
             View Project
             <svg
