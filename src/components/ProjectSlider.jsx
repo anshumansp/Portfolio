@@ -1,19 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow } from "swiper/modules";
 import { styles } from "../styles";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { github } from "../assets";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-
 const ProjectSlider = () => {
+  // Get the top 5 projects
+  const topProjects = projects.slice(0, 5);
+  // Move CrownKing to the center (assuming it's the first project)
+  const centerProject = topProjects[0]; // CrownKing
+  const leftProjects = [topProjects[1], topProjects[2]]; // Two left projects
+  const rightProjects = [topProjects[3], topProjects[4]]; // Two right projects
+
   return (
-    <section className="relative w-full min-h-screen pt-12 pb-32 bg-black">
+    <section className="relative w-full py-16 bg-black">
       {/* Section header */}
       <div className="container mx-auto px-8 mb-10">
         <motion.div
@@ -35,66 +36,76 @@ const ProjectSlider = () => {
         </motion.div>
       </div>
 
-      {/* Staggered project display - image only */}
-      <div className="relative w-full overflow-hidden">
-        {/* Desktop layout - Staggered/overlapping design */}
-        <div className="hidden md:block">
-          <div className="flex flex-wrap justify-center items-center gap-5">
-            <Swiper
-              effect={"coverflow"}
-              grabCursor={true}
-              centeredSlides={true}
-              slidesPerView={"auto"}
-              coverflowEffect={{
-                rotate: 10,
-                stretch: 0,
-                depth: 200,
-                modifier: 1,
-                slideShadows: true,
-              }}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
-              modules={[EffectCoverflow, Autoplay]}
-              className="w-full"
-            >
-              {projects.map((project, index) => (
-                <SwiperSlide key={`project-${index}`} className="max-w-lg">
-                  <ProjectImageCard project={project} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+      {/* Staggered project showcase - desktop */}
+      <div className="hidden md:block relative max-w-[1400px] mx-auto h-[500px] px-16 mb-20">
+        {/* Center project - largest */}
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 w-[460px]">
+          <ProjectPreview
+            project={centerProject}
+            scale={1.0}
+            zIndex={30}
+            rotation={0}
+          />
         </div>
 
-        {/* Mobile layout - Simple cards */}
-        <div className="md:hidden">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={20}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            modules={[Autoplay]}
-            className="w-full px-4"
-          >
-            {projects.map((project, index) => (
-              <SwiperSlide key={`project-${index}`}>
-                <ProjectImageCard project={project} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+        {/* Left side projects - smaller and staggered */}
+        <div className="absolute left-[15%] top-1/2 transform -translate-y-1/2 -translate-x-1/5 z-20 w-[380px]">
+          <ProjectPreview
+            project={leftProjects[0]}
+            scale={0.85}
+            zIndex={20}
+            rotation={-5}
+          />
+        </div>
+        <div className="absolute left-[5%] top-1/2 transform -translate-y-1/2 -translate-x-1/4 z-10 w-[360px]">
+          <ProjectPreview
+            project={leftProjects[1]}
+            scale={0.7}
+            zIndex={10}
+            rotation={-10}
+          />
+        </div>
+
+        {/* Right side projects - smaller and staggered */}
+        <div className="absolute right-[15%] top-1/2 transform -translate-y-1/2 translate-x-1/5 z-20 w-[380px]">
+          <ProjectPreview
+            project={rightProjects[0]}
+            scale={0.85}
+            zIndex={20}
+            rotation={5}
+          />
+        </div>
+        <div className="absolute right-[5%] top-1/2 transform -translate-y-1/2 translate-x-1/4 z-10 w-[360px]">
+          <ProjectPreview
+            project={rightProjects[1]}
+            scale={0.7}
+            zIndex={10}
+            rotation={10}
+          />
+        </div>
+      </div>
+
+      {/* Mobile layout - Simple carousel */}
+      <div className="md:hidden relative px-4 mb-16">
+        <div className="flex flex-col gap-6">
+          {topProjects.map((project, index) => (
+            <div key={index} className="w-full">
+              <ProjectPreview
+                project={project}
+                scale={1}
+                zIndex={10}
+                rotation={0}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-// Image-only card with enhanced hover effects
-const ProjectImageCard = ({ project }) => {
-  const { name, image, webpage_link, source_code_link } = project;
+const ProjectPreview = ({ project, scale = 1, zIndex = 10, rotation = 0 }) => {
+  const { name, image, webpage_link } = project;
 
   const handleClick = () => {
     window.open(webpage_link, "_blank");
@@ -102,49 +113,49 @@ const ProjectImageCard = ({ project }) => {
 
   return (
     <motion.div
-      variants={fadeIn("up", "spring", 0.3)}
-      initial="hidden"
-      whileInView="show"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 * zIndex }}
       viewport={{ once: true }}
-      className="relative bg-black rounded-2xl p-2 shadow-xl transform transition-all duration-300 hover:scale-[1.02] cursor-pointer overflow-hidden group border border-white/10"
+      style={{
+        transform: `scale(${scale}) rotate(${rotation}deg)`,
+        zIndex: zIndex,
+      }}
+      className="relative w-full transition-all duration-300 hover:z-50 hover:scale-105"
       onClick={handleClick}
     >
-      {/* Project image with increased height */}
-      <div className="relative w-full h-[400px] overflow-hidden rounded-lg">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover transition-all duration-500 group-hover:blur-sm group-hover:scale-110"
-        />
-
-        {/* Animated hover overlay with project name */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-b from-black/60 to-black/90 transform translate-y-8 group-hover:translate-y-0">
-          {/* Project title with glowing effect */}
-          <h3 className="text-white font-bold text-[32px] mb-4 text-center px-4 relative">
-            <span className="relative z-10">{name}</span>
-            <span className="absolute inset-0 blur-md bg-gradient-to-r from-white to-gray-800 opacity-20 z-0"></span>
-          </h3>
-
-          {/* Animated button */}
-          <span className="px-6 py-2 bg-gradient-to-r from-white to-gray-800 text-black font-medium rounded-lg transform scale-0 group-hover:scale-100 transition-transform duration-500 hover:shadow-xl hover:shadow-white/20">
-            View Project
-          </span>
+      <div className="relative w-full rounded-xl overflow-hidden shadow-2xl cursor-pointer border border-white/10 bg-black">
+        <div className="w-full aspect-[16/9] bg-black">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-contain"
+          />
         </div>
 
-        {/* GitHub link with enhanced styling */}
-        <div className="absolute top-3 right-3 z-10 transform translate-x-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 delay-100">
-          <div
-            onClick={(e) => {
-              e.stopPropagation();
-              window.open(source_code_link, "_blank");
-            }}
-            className="w-12 h-12 rounded-full flex justify-center items-center cursor-pointer bg-black hover:bg-white hover:text-black transition-all duration-300 border border-white/20 hover:border-white shadow-lg"
-          >
-            <img
-              src={github}
-              alt="github"
-              className="w-1/2 h-1/2 object-contain group-hover:invert-0"
-            />
+        {/* Overlay on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+          <div className="p-4 w-full">
+            <h3 className="text-white font-bold text-xl">{name}</h3>
+            <div className="flex justify-between items-center mt-2">
+              <span className="text-sm text-white/80">View Project</span>
+              <div className="w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
       </div>

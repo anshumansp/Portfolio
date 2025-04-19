@@ -5,7 +5,6 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import { useNavigate } from "react-router-dom";
 
 const ProjectCard = ({
   index,
@@ -17,99 +16,109 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   const handleClick = () => {
-    window.location.href = webpage_link;
+    window.open(webpage_link, "_blank", "noopener,noreferrer");
   };
+
   return (
-    // <motion.div variants={fadeIn("up", "spring", index * 0.75)}>
-    //   <Tilt
-    //     options={{
-    //       max: 45,
-    //       scale: 1,
-    //       speed: 450,
-    //     }}
-    //     className="bg-tertiary cursor-pointer p-5 rounded-2xl  w-full sm:w-[360px] max-w-screen-xl"
-    //     onClick={handleClick}
-    //   >
-        <div onClick={handleClick} className="bg-tertiary cursor-pointer p-5 rounded-2xl  w-full sm:w-[360px] max-w-screen-xl">
-          <div
-            onClick={handleClick}
-            className="relative w-full cursor-pointer sm:h-[230px] h-[350px]"
-          >
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.15, 0.75)}
+      className="w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)]"
+    >
+      <div className="bg-gradient-to-br from-[#1e1b4b] via-[#2d1b4b] to-[#3b1d59] rounded-2xl overflow-hidden h-full flex flex-col shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-purple-900/30 border border-[#915eff]/20 hover:border-[#915eff]/30">
+        {/* Project image */}
+        <div
+          className="relative cursor-pointer h-48 overflow-hidden"
+          onClick={handleClick}
+        >
+          <div className="w-full h-full flex items-center justify-center bg-black">
             <img
               src={image}
               alt={name}
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-contain"
             />
+          </div>
 
-            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-              <div
-                onClick={() => window.open(source_code_link, "_blank")}
-                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-              >
-                <img
-                  src={github}
-                  alt="github"
-                  className="w-1/2 h-1/2 object-contain"
-                />
-              </div>
+          {/* GitHub link */}
+          <div className="absolute top-3 right-3 z-10">
+            <div
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(source_code_link, "_blank", "noopener,noreferrer");
+              }}
+              className="w-8 h-8 rounded-full flex justify-center items-center cursor-pointer bg-black hover:bg-white hover:text-black transition-all duration-300 border border-white/20 hover:border-white"
+            >
+              <img
+                src={github}
+                alt="github"
+                className="w-1/2 h-1/2 object-contain"
+              />
             </div>
           </div>
+        </div>
 
-          <div onClick={handleClick} className="cursor-pointer mt-5">
-            <h3 className="text-white font-bold text-[24px]">{name}</h3>
-            <p className="mt-2 text-secondary text-[14px]">{description}</p>
-          </div>
+        {/* Project details */}
+        <div className="p-5 flex-1 flex flex-col">
+          <h3 className="text-white font-bold text-xl mb-2">{name}</h3>
+          <p className="text-secondary text-sm flex-1">{description}</p>
 
-          <div
-            onClick={handleClick}
-            className="cursor-pointer mt-4 flex justify-start"
-          >
-            <p>
-              <span> Visit Project : </span>
-              <a href={webpage_link} className="text-[#b564ed]">
-                {name}
-              </a>
-            </p>
-          </div>
-
-          <div
-            onClick={handleClick}
-            className="cursor-pointer mt-4 flex flex-wrap gap-2"
-          >
+          {/* Tags */}
+          <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+              <span
+                key={tag.name}
+                className={`text-xs px-2 py-1 rounded-full ${tag.color} bg-black/20`}
+              >
                 #{tag.name}
-              </p>
+              </span>
             ))}
           </div>
+
+          {/* View Project button */}
+          <button
+            onClick={handleClick}
+            className="mt-4 py-2 px-4 bg-gradient-to-r from-[#1e1b4b] to-[#3b1d59] text-white text-sm font-medium rounded-lg transition-all duration-300 border border-[#915eff]/20 hover:border-[#915eff]/50 hover:shadow-purple-900/30 flex items-center justify-center gap-2"
+          >
+            View Project
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </button>
         </div>
-    //   </Tilt>
-    // </motion.div>
+      </div>
+    </motion.div>
   );
 };
 
 const Works = () => {
   return (
-    <div className="sm:px-16 px-6 sm:py-10 py-16 max-w-7xl mx-auto" id="work">
+    <div className="max-w-7xl mx-auto px-6 lg:px-8" id="projects">
       <motion.div variants={textVariant()}>
-        <p className={`mb-6 ${styles.sectionSubText}`}>My Work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <p className={`${styles.sectionSubText} my-5`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} mt-6`}>Projects.</h2>
       </motion.div>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondarytext-[17px] leading-[30px]"
-        >
-          Following are my recent projects that serve as a proof to my caliber
-          as a full-stack developer. Each project is accompanied by a concise
-          description and links to their respective code repositories. These
-          projects not only showcase my technical skills, but also reflect my
-          problem-solving abilities and application development skills.
-        </motion.p>
+      <div className="w-full mt-10 text-secondary text-[17px] max-w-3xl leading-[30px]">
+        <p>
+          These projects showcase my skills and experience through real-world
+          examples of my work. Each project is briefly described with links to
+          code repositories and live demos. They reflect my ability to solve
+          complex problems, work with different technologies, and manage
+          projects effectively.
+        </p>
       </div>
 
-      <div className="mt-16 flex flex-wrap gap-7">
+      <div className="mt-10 flex flex-wrap gap-6">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
@@ -118,5 +127,4 @@ const Works = () => {
   );
 };
 
-export default Works;
-// export default SectionWrapper(Works, "work");
+export default SectionWrapper(Works, "work");

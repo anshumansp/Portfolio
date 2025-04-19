@@ -6,7 +6,13 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import emailjs from "@emailjs/browser";
-import { FaGithub, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaGlobe,
+  FaYoutube,
+} from "react-icons/fa";
 import { BsEnvelope, BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
 import { MdEmail, MdPlace } from "react-icons/md";
 import ContactInfo3DCanvas from "./canvas/ContactInfo3D";
@@ -115,6 +121,13 @@ const Contact = () => {
               value="anshumansp16@gmail.com"
               link="mailto:anshumansp16@gmail.com"
               color="#4285F4"
+            />
+            <ContactInfoItem
+              icon={FaYoutube}
+              label="YouTube"
+              value="@thepixelizesolution"
+              link="https://www.youtube.com/@thepixelizesolution"
+              color="#FF0000"
             />
           </div>
         </motion.div>

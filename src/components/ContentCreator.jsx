@@ -7,25 +7,20 @@ import { SectionWrapper } from "../hoc";
 const ContentCreator = () => {
   return (
     <div className="container mx-auto px-6 pt-16 pb-24">
-      <motion.div variants={textVariant()} className="mb-12 text-center">
-        <h2 className={`${styles.sectionHeadText} mb-4`}>Content Creator</h2>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="text-gray-300 text-lg max-w-3xl mx-auto"
-        >
-          I create educational content on the latest technologies in AI
-          development, full-stack web development, and modern tools for
-          developers.
-        </motion.p>
+      <motion.div variants={textVariant()}>
+        <p className={`${styles.sectionSubText} my-5`}>
+          I create educational content
+        </p>
+        <h2 className={`${styles.sectionHeadText} mt-6`}>Content Creator.</h2>
       </motion.div>
 
-      <div className="flex flex-col items-center">
-        {/* YouTube Video Embed - Slightly Smaller */}
+      <div className="flex flex-col items-center mt-10">
+        {/* YouTube Video Embed with subtle shadow */}
         <motion.div
           variants={fadeIn("up", "spring", 0.3, 0.75)}
-          className="w-full max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl mb-12 md:px-8"
+          className="w-full max-w-4xl mx-auto aspect-video rounded-xl overflow-hidden mb-12 md:px-8"
         >
-          <div className="relative w-full h-full p-1 bg-gradient-to-r from-red-600 to-red-800 rounded-xl">
+          <div className="relative w-full h-full rounded-xl shadow-[0_0_15px_rgba(220,220,220,0.1)]">
             <iframe
               width="100%"
               height="100%"

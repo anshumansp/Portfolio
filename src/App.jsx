@@ -103,6 +103,11 @@ const App = () => {
             <Tech />
           </SectionLoader>
 
+          {/* Projects Section */}
+          <SectionLoader label="Loading projects section...">
+            <Works />
+          </SectionLoader>
+
           {/* Content Creator Section */}
           <SectionLoader label="Loading content section...">
             <ContentCreator />

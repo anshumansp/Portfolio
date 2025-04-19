@@ -1,7 +1,3 @@
-// All the images are in assets folder
-// Description should be between 140-200 characters.
-// Tags will be decided by you only and a maximum of only three can be used at a time of tech used
-
 1. CrownKing
 
 image - crownking.png
@@ -76,5 +72,3 @@ description - React app for messaging using socket io
 tags - Tags will be decided by you only and a maximum of only three can be used at a time of tech used
 link - https://vibechats.vercel.app
 github - https://github.com/anshumansp/Vibe-Chat
-
-6. Remove Notex from existing portfolio

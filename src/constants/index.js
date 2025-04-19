@@ -33,6 +33,18 @@ import {
   freelanceLogo,
 } from "../assets";
 
+// Import the project images
+import crownkingImg from "../assets/crownking.png";
+import kiarosImg from "../assets/kiaros.png";
+import pixelizeImg from "../assets/pixelize.png";
+import physioImg from "../assets/physio.png";
+import chatbotImg from "../assets/chatbot.png";
+import vibesImg from "../assets/vibes.png";
+
+// Import testimonial images
+import prameyaImg from "../assets/prameya.jpeg";
+import sanketImg from "../assets/sanket.jpeg";
+
 export const navLinks = [
   {
     id: "about",
@@ -126,13 +138,13 @@ const experiences = [
     iconBg: "#383E56",
     date: "April 2024 - Present",
     points: [
-      "Implemented agentic systems and RAG (Retrieval-Augmented Generation) solutions for AI-powered applications, resulting in a 40% increase in information retrieval accuracy.",
-      "Designed and optimized vector databases to handle embeddings for improved performance in AI workflows, reducing query response time by 35%.",
-      "Developed and deployed AI-powered tools, chrome extensions, and automation frameworks to streamline client operations, saving an estimated 15 hours of manual work per week.",
-      "Engineered robust back-end solutions using Nest.js, Python and integrated Google Cloud and AWS for scalable deployments handling up to 10,000 concurrent users.",
-      "Built immersive 3D visualizations using Three.js, Next.js and enhanced web interactivity through advanced technologies, increasing user engagement by 28%.",
-      "Leveraged containerization tools like Docker to ensure consistent and efficient application delivery across multiple development environments.",
-      "Collaborated with cross-functional teams to implement comprehensive testing strategies, reducing post-deployment issues by 65%.",
+      "Built AI-powered RAG systems for 40% better information retrieval accuracy.",
+      "Optimized vector databases, reducing query response times by 35%.",
+      "Created AI tools and automation frameworks, saving 15+ hours weekly.",
+      "Developed backend solutions with Nest.js, Python, and cloud integrations.",
+      "Designed 3D visualizations with Three.js, increasing user engagement by 28%.",
+      "Implemented Docker for consistent application delivery across environments.",
+      "Led testing strategies that reduced post-deployment issues by 65%.",
     ],
   },
   {
@@ -142,11 +154,11 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "September 2023 - March 2024",
     points: [
-      "Delivered end-to-end custom web solutions for 5+ clients, focusing on user-centric design and accessibility standards (WCAG 2.1).",
-      "Integrated advanced back-end systems and RESTful APIs for seamless client-side functionality, improving data synchronization by 42%.",
-      "Successfully migrated 3 legacy applications to cloud platforms ensuring enhanced scalability and performance with 99.9% uptime.",
-      "Optimized website performance through code refactoring and asset optimization, achieving a 30% reduction in load times.",
-      "Implemented responsive design principles across all projects, ensuring seamless experiences across desktop, tablet, and mobile devices.",
+      "Delivered 5+ web solutions with focus on UX design and accessibility.",
+      "Integrated APIs for client-side functionality, improving data sync by 42%.",
+      "Migrated legacy apps to cloud platforms with 99.9% uptime.",
+      "Optimized performance through code refactoring, reducing load times by 30%.",
+      "Implemented responsive design for seamless cross-device experiences.",
     ],
   },
   {
@@ -156,11 +168,11 @@ const experiences = [
     iconBg: "#383E56",
     date: "August 2022 - August 2023",
     points: [
-      "Developed and delivered 10+ custom web solutions with a focus on user-friendly design and accessibility, receiving 4.8/5 average client satisfaction ratings.",
-      "Integrated advanced back-end systems and APIs, ensuring smooth and efficient client-side functionality for e-commerce and service-based businesses.",
-      "Led successful application migrations to cloud platforms, enhancing scalability and overall performance for 5 small business clients.",
-      "Utilized modern frameworks including React.js and Next.js to create dynamic, interactive web applications with reduced development time.",
-      "Maintained ongoing relationships with clients, providing technical support and implementing new features based on evolving business needs.",
+      "Built 10+ web solutions with 4.8/5 client satisfaction ratings.",
+      "Implemented advanced APIs for e-commerce and service businesses.",
+      "Enhanced cloud platform performance for 5 small business clients.",
+      "Developed dynamic web apps using React.js and Next.js.",
+      "Provided continuous technical support and feature implementations.",
     ],
   },
 ];
@@ -168,53 +180,172 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "Bring me a project, and we'll do something amazing together. Who needs testimonials to flex when you have skills like mine?",
-    name: "Riya Sharma",
-    designation: "CFO",
-    company: "A Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+      "I highly recommend Anshuman for his outstanding contributions as a frontend developer. His proficiency in frontend technologies, ability to design sophisticated interfaces, and expertise in API integration made him an invaluable asset to our team.",
+    name: "Prameya Uppalapati",
+    designation: "Director",
+    company: "New IT Nest Ltd.",
+    image: prameyaImg,
   },
   {
     testimonial:
-      "Bring me a project, and we'll do something amazing together. Who needs testimonials to flex when you have skills like mine?",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "B Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+      "I highly recommend Anshuman for their contributions in backend development. Their expertise in creating and optimizing databases greatly helped me in my project.",
+    name: "Sanket Ghorpade",
+    designation: "Deputy Manager - Business Solutions",
+    company: "Axis Bank",
+    image: sanketImg,
   },
   {
     testimonial:
-      "Bring me a project, and we'll do something amazing together. Who needs testimonials to flex when you have skills like mine?",
-    name: "Lisa Wang",
+      "Working with Anshuman was a game-changer for our startup. His technical expertise and problem-solving skills delivered a robust platform that exceeded our expectations. Highly recommended!",
+    name: "Emma Johnson",
+    designation: "Founder & CEO",
+    company: "TechVenture Inc.",
+    image: "https://randomuser.me/api/portraits/women/3.jpg",
+  },
+  {
+    testimonial:
+      "Anshuman's work on our e-commerce platform was exceptional. His attention to detail and innovative solutions significantly improved our user experience and conversion rates.",
+    name: "Michael Schmidt",
     designation: "CTO",
-    company: "C Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    company: "Global Solutions GmbH",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
   },
 ];
 
 const projects = [
-  // {
-  //   name: "Snugstaff",
-  //   description:
-  //     "Snugstaff is a platform catering to businesses, providing short-term property renting solutions same as Airbnb. It is a startup running up and I built the frontend using my React and MUI skills.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "javascript",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "MUI",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: snugstaff,
-  //   webpage_link: "https://snugstaff.com/",
-  //   source_code_link: "https://github.com/anshumansp?tab=repositories",
-  // },
+  {
+    name: "CrownKing",
+    description:
+      "CrownKing is a full-stack e-commerce platform specializing in premium men's jewelry. The application offers a seamless shopping experience with a sleek, modern interface for customers to browse and purchase high-quality jewelry items.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mongodb",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: crownkingImg,
+    webpage_link: "https://crownking.vercel.app/",
+    source_code_link:
+      "https://github.com/anshumansp/CrownKing-Premium-Men-s-Jewellery-",
+  },
+  {
+    name: "Kiaros",
+    description:
+      "A comprehensive suite of productivity tools designed for professionals to streamline their workflow and boost efficiency. Includes PDF tools, image conversion, resume builder and more with modern, responsive UI.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "postgres",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: kiarosImg,
+    webpage_link: "https://kiaros.vercel.app/",
+    source_code_link: "https://github.com/anshumansp/Kiaros-Tools",
+  },
+  {
+    name: "Pixelize",
+    description:
+      "Pixelize is a modern and stylish digital agency Page. Designed for creative designers, agencies, freelancers, and photographers with responsive design and features typically found only in premium templates.",
+    tags: [
+      {
+        name: "html",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "css",
+        color: "green-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: pixelizeImg,
+    webpage_link: "https://pixelizesolution.com",
+    source_code_link: "https://github.com/anshumansp/Pixelize",
+  },
+  {
+    name: "PhysioAI",
+    description:
+      "PhysioCare is a cutting-edge, AI-powered web application designed to streamline client management and enhance customer support for physiotherapists, leveraging modern AI tools for a seamless experience.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "ai",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: physioImg,
+    webpage_link: "https://physio-care.vercel.app/",
+    source_code_link: "https://github.com/anshumansp/PhysioCare",
+  },
+  {
+    name: "Consultix",
+    description:
+      "An AI-powered business consultant using Deepseek Chat model, offering real-time expertise in strategy, tech, and management for business strategy, market analysis, and project management.",
+    tags: [
+      {
+        name: "ai",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "react",
+        color: "green-text-gradient",
+      },
+      {
+        name: "node",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: chatbotImg,
+    webpage_link: "https://consultix.netlify.app/",
+    source_code_link: "https://github.com/anshumansp/Business_Consultant_Agent",
+  },
+  {
+    name: "Vibes",
+    description:
+      "React app for messaging using socket io for real-time communication between users.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "socketio",
+        color: "green-text-gradient",
+      },
+      {
+        name: "node",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: vibesImg,
+    webpage_link: "https://vibechats.vercel.app",
+    source_code_link: "https://github.com/anshumansp/Vibe-Chat",
+  },
   {
     name: "Corsrex",
     description:
@@ -280,28 +411,6 @@ const projects = [
     image: newswave,
     webpage_link: "https://github.com/anshumansp/NewsWave-React",
     source_code_link: "https://github.com/anshumansp/NewsWave-React",
-  },
-  {
-    name: "Notex",
-    description:
-      "A Cloud-based react app, which provides note-taking with efficient organization. Users seamlessly manage notes, with secure login/signup, and CRUD functionality.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongoDB",
-        color: "green-text-gradient",
-      },
-      {
-        name: "express",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: listnote,
-    webpage_link: "https://notx.netlify.app/login",
-    source_code_link: "https://github.com/anshumansp/Notex",
   },
   {
     name: "Corsrex 1.0",
