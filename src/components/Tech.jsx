@@ -99,14 +99,14 @@ const frontendSkills = [
   { name: "JavaScript", icon: "javascript" },
   { name: "TypeScript", icon: "typescript" },
   { name: "React.js", icon: "react" },
-  { name: "Next.js", icon: "/icons/nextjs.svg" },
+  { name: "Next.js", icon: "/icons/next.png" },
   { name: "Redux", icon: "redux" },
   { name: "Three.js", icon: "/icons/threejs.svg" },
 ];
 
 // Backend skills with icons
 const backendSkills = [
-  { name: "Node.js", icon: "nodejs" },
+  { name: "Node.js", icon: "/icons/node.png" },
   { name: "Express.js", icon: "/icons/expressjs.svg" },
   { name: "Nest.js", icon: "/icons/nestjs.svg" },
   { name: "Python", icon: <PythonIcon /> },
