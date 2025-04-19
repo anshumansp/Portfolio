@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
-import { FaGithub, FaLinkedin, FaYoutube, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -29,7 +29,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id="navbar"
+    <nav
+      id="navbar"
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -65,35 +66,21 @@ const Navbar = () => {
 
         {/* Social Media Icons (Desktop) */}
         <div className="hidden sm:flex items-center gap-4">
-          <a 
-            href="https://github.com/anshumansp/" 
-            target="_blank" 
+          <a
+            href="https://github.com/anshumansp/"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-[#c026d3] transition-colors duration-300"
           >
             <FaGithub size={22} />
           </a>
-          <a 
-            href="https://www.linkedin.com/in/anshuman-parmar-757666219/" 
-            target="_blank" 
+          <a
+            href="https://www.linkedin.com/in/anshuman-parmar-757666219/"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-[#c026d3] transition-colors duration-300"
           >
             <FaLinkedin size={22} />
-          </a>
-          <a 
-            href="https://www.youtube.com/@thepixelizesolution" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#c026d3] transition-colors duration-300"
-          >
-            <FaYoutube size={22} />
-          </a>
-          <a 
-            href="mailto:anshumansp16@gmail.com" 
-            className="text-white hover:text-[#c026d3] transition-colors duration-300"
-          >
-            <FaEnvelope size={22} />
           </a>
         </div>
 
@@ -126,38 +113,24 @@ const Navbar = () => {
                   <a href={`#${link.id}`}>{link.title}</a>
                 </li>
               ))}
-              
+
               {/* Social Icons (Mobile) */}
               <div className="flex gap-4 mt-2">
-                <a 
-                  href="https://github.com/anshumansp/" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/anshumansp/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#c026d3] transition-colors duration-300"
                 >
                   <FaGithub size={18} />
                 </a>
-                <a 
-                  href="https://www.linkedin.com/in/anshuman-parmar-757666219/" 
-                  target="_blank" 
+                <a
+                  href="https://www.linkedin.com/in/anshuman-parmar-757666219/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#c026d3] transition-colors duration-300"
                 >
                   <FaLinkedin size={18} />
-                </a>
-                <a 
-                  href="https://www.youtube.com/@thepixelizesolution" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-[#c026d3] transition-colors duration-300"
-                >
-                  <FaYoutube size={18} />
-                </a>
-                <a 
-                  href="mailto:anshumansp16@gmail.com" 
-                  className="text-white hover:text-[#c026d3] transition-colors duration-300"
-                >
-                  <FaEnvelope size={18} />
                 </a>
               </div>
             </ul>

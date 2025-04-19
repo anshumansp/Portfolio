@@ -25,15 +25,18 @@ import meta from "./company/meta.webp";
 import shopify from "./company/shopify.webp";
 import starbucks from "./company/starbucks.webp";
 import tesla from "./company/tesla.webp";
+import sazagLogo from "./sazag.svg";
+import newITLogo from "./newit.svg";
+import freelanceLogo from "./freelance.svg";
 
 import snugstaff from "./snugstaff.png";
 import corsrex from "./corsrex.webp";
 import listnote from "./listnote.webp";
 import newswave from "./newswave.webp";
-import computer from './computer.webp';
-import textutils from './textutils.webp';
-import corsrexv1 from './corsrex-v1.webp';
-import urbanly from './urbanly.webp';
+import computer from "./computer.webp";
+import textutils from "./textutils.webp";
+import corsrexv1 from "./corsrex-v1.webp";
+import urbanly from "./urbanly.webp";
 
 export {
   logo,
@@ -61,12 +64,15 @@ export {
   shopify,
   starbucks,
   tesla,
+  sazagLogo,
+  newITLogo,
+  freelanceLogo,
   corsrex,
   listnote,
-  newswave, 
+  newswave,
   computer,
   textutils,
   urbanly,
   corsrexv1,
-  snugstaff
+  snugstaff,
 };

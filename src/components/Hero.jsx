@@ -1,50 +1,122 @@
-import React, { useContext, lazy, Suspense} from 'react';
-import {styles} from '../styles';
-import {motion} from 'framer-motion';
-const ComputersCanvas = lazy(() => import('./canvas/Computers'));
-const ComputerImage = lazy(() => import('./ComputerImage'));
-import MobileContext from '../context/mobileContext';
+import React, { useContext } from "react";
+import { motion } from "framer-motion";
+import { styles } from "../styles";
+import MobileContext from "../context/mobileContext";
 
 const Hero = () => {
   const isMobile = useContext(MobileContext);
 
   return (
-    <section className='relative w-full h-screen mx-auto'>
-      <div className={`${styles.paddingX} absolute inset-0 ${isMobile? 'top-[100px]' : 'top-[70px]'} max-w-7xl mx-auto flex flex-row items-start gap-5`}>
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className='w-5 h-5 rounded-full bg-[#915eff]'/>
-          <div className='w-1 sm:h-80 h-40 violet-gradient'/>
-        </div>
+    <section className="relative w-full min-h-screen mx-auto flex items-center justify-center">
+      {/* Darker background gradient */}
+      <div className="absolute inset-0 bg-black"></div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className='text-[#915eff]'>Anshuman</span></h1>
+      {/* Small animated stars/particles for background effect */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 30 }).map((_, index) => (
+          <div
+            key={index}
+            className="absolute w-1 h-1 bg-white rounded-full opacity-60"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animation: `pulse ${Math.random() * 3 + 2}s infinite`,
+            }}
+          />
+        ))}
+      </div>
 
-          <p className={`${styles.heroSubText} mt-0 text-white-100`}>I code ideas and dreams<br className='sm:block hidden'/> on web, from pixels to databases.</p>
+      <div className="container mx-auto max-w-7xl px-6 relative z-10">
+        <div className="flex flex-col items-center text-center">
+          {/* Main heading with modern animation */}
+          <motion.h1
+            className={`${styles.heroHeadText} text-white mb-8 text-center`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+              Expert Web Developer &
+            </span>
+            <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-white">
+              AI Specialist
+            </span>
+          </motion.h1>
+
+          {/* Subheading */}
+          <motion.p
+            className={`${styles.heroSubText} text-gray-300 max-w-3xl mx-auto mb-8`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            I design and build high-performance, modern and minimalistic
+            websites that drive results and help your business grow.
+            <br className="hidden md:block" />
+            No BS. Just Results.
+          </motion.p>
+
+          {/* CTA button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <a
+              href="#work"
+              className="bg-gradient-to-r from-gray-800 to-white text-black font-medium py-3 px-8 rounded-lg transition-all duration-300 inline-block hover:shadow-lg hover:shadow-white/20"
+            >
+              View My Work
+            </a>
+          </motion.div>
+
+          {/* Trust badges/social proof - optional */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-6 mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <p className="text-gray-400 text-sm mb-4 w-full">
+              Trusted by clients from
+            </p>
+            <div className="flex flex-wrap justify-center gap-8">
+              {["India", "United States", "UK", "Australia", "Germany"].map(
+                (country, index) => (
+                  <span
+                    key={index}
+                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    {country}
+                  </span>
+                )
+              )}
+            </div>
+          </motion.div>
         </div>
       </div>
-      <Suspense fallback={null}>
-        {isMobile? <ComputerImage/> : <ComputersCanvas />}
-      </Suspense>
 
-        <div className={`absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center ${isMobile? 'top-[75vh]' : 'top-[90vh]'}`}>
-          <a href="#about">
-            <div className='w-[34px] -my-4 h-[60px] rounded-3xl border-4 border-secondary flex justify-center items-start mt-6 p-2'>
-              <motion.div
-                animate={{
-                  y: [0, 24, 0]
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: 'loop'
-                }}
-                className="w-3 h-3 rounded-full bg-secondary mb-1"
-              />
-            </div>
-          </a>
-        </div>
+      {/* Move hovering indicator to the right corner */}
+      <div className="absolute bottom-10 right-10 md:right-16 z-10">
+        <a href="#about">
+          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-white flex justify-center items-start p-2">
+            <motion.div
+              animate={{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="w-3 h-3 rounded-full bg-white"
+            />
+          </div>
+        </a>
+      </div>
     </section>
-  )
-}
+  );
+};
 
 export default Hero;

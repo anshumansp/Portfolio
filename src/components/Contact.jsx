@@ -1,17 +1,15 @@
-import { useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
+import { fadeIn, textVariant } from "../utils/motion";
 import { styles } from "../styles";
-import { EarthCanvas, ContactInfo3DCanvas } from "./canvas";
+import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaYoutube,
-  FaEnvelope,
-  FaGlobe,
-} from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+import { FaGithub, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
+import { BsEnvelope, BsLinkedin, BsGithub, BsInstagram } from "react-icons/bs";
+import { MdEmail, MdPlace } from "react-icons/md";
+import ContactInfo3DCanvas from "./canvas/ContactInfo3D";
 
 const ContactInfoItem = ({ icon: Icon, label, value, link, color }) => (
   <a
@@ -112,25 +110,11 @@ const Contact = () => {
               color="#0077b5"
             />
             <ContactInfoItem
-              icon={FaYoutube}
-              label="YouTube"
-              value="@thepixelizesolution"
-              link="https://www.youtube.com/@thepixelizesolution"
-              color="#FF0000"
-            />
-            <ContactInfoItem
               icon={FaEnvelope}
               label="Email"
               value="anshumansp16@gmail.com"
               link="mailto:anshumansp16@gmail.com"
               color="#4285F4"
-            />
-            <ContactInfoItem
-              icon={FaGlobe}
-              label="Agency"
-              value="pixelizesolution.com"
-              link="https://pixelizesolution.com"
-              color="#915eff"
             />
           </div>
         </motion.div>

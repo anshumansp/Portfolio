@@ -43,14 +43,17 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I'm a skilled JavaScript developer with expertise in front-end and
-        back-end development, which allow me to work as a full-stack web developer. I
-        focus on widely used frameworks like React for front-end, Node.js, and
-        Express for back-end, and MongoDB/PostgreSQL for databases. I love to
-        learn new things, and can easily collaborate with clients to create
-        effective and scalable solutions to some real-world problems. I'm always
-        open to teamwork, idea-sharing, and creative problem-solving. So, Let's
-        work together to transform your ideas into reality!
+        Full-Stack & AI Developer with more than 3 years of industry experience in full-stack development, AI and automation, specializing in
+        delivering industry-level projects that enhance user engagement and
+        streamline processes. Successfully completed over 10 full-stack
+        development projects, consistently receiving positive feedback from
+        clients and employers on impactful designs and efficient solutions.
+        Skilled in Typescript, Python, React,  HTML, CSS,
+        JavaScript, and leveraging advanced frameworks like Next.js, Node.js,
+        and Nest.js to drive results. Experienced in implementing AI systems
+        including RAG solutions, vector databases, and automation frameworks
+        that significantly improve performance and efficiency.
+        performance and efficiency.
       </motion.p>
 
       <div className="mt-12 flex flex-wrap justify-center gap-10">
@@ -58,7 +61,6 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-
     </>
   );
 };

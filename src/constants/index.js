@@ -28,6 +28,9 @@ import {
   textutils,
   computer,
   threejs,
+  sazagLogo,
+  newITLogo,
+  freelanceLogo,
 } from "../assets";
 
 export const navLinks = [
@@ -47,20 +50,20 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Full-Stack Developer",
+    title: "Fullstack Developer",
     icon: web,
   },
   {
-    title: "Node JS Developer",
+    title: "Backend Developer",
     icon: backend,
   },
   {
-    title: "React Developer",
-    icon: web,
+    title: "Javascript Developer",
+    icon: mobile,
   },
   {
-    title: "Frontend Developer",
-    icon: backend,
+    title: "Python Developer",
+    icon: creator,
   },
 ];
 
@@ -77,18 +80,18 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-  // {
-  //   name: "TypeScript",
-  //   icon: typescript,
-  // },
+  {
+    name: "TypeScript",
+    icon: typescript,
+  },
   {
     name: "React JS",
     icon: reactjs,
   },
-  // {
-  //   name: "Redux Toolkit",
-  //   icon: redux,
-  // },
+  {
+    name: "Redux Toolkit",
+    icon: redux,
+  },
   {
     name: "Tailwind CSS",
     icon: tailwind,
@@ -102,75 +105,62 @@ const technologies = [
     icon: mongodb,
   },
   {
+    name: "Three JS",
+    icon: threejs,
+  },
+  {
     name: "git",
     icon: git,
   },
   {
-    name: "figma",
-    icon: figma,
+    name: "docker",
+    icon: docker,
   },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  // ,
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Full Stack Web Developer",
+    company_name: "Sazag Infotech Private Limited",
+    icon: sazagLogo,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "April 2024 - Present",
     points: [
-      "It is just an example component section to display how the experiences will look like if I have had done any corporate jobs.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Implemented agentic systems and RAG (Retrieval-Augmented Generation) solutions for AI-powered applications, resulting in a 40% increase in information retrieval accuracy.",
+      "Designed and optimized vector databases to handle embeddings for improved performance in AI workflows, reducing query response time by 35%.",
+      "Developed and deployed AI-powered tools, chrome extensions, and automation frameworks to streamline client operations, saving an estimated 15 hours of manual work per week.",
+      "Engineered robust back-end solutions using Nest.js, Python and integrated Google Cloud and AWS for scalable deployments handling up to 10,000 concurrent users.",
+      "Built immersive 3D visualizations using Three.js, Next.js and enhanced web interactivity through advanced technologies, increasing user engagement by 28%.",
+      "Leveraged containerization tools like Docker to ensure consistent and efficient application delivery across multiple development environments.",
+      "Collaborated with cross-functional teams to implement comprehensive testing strategies, reducing post-deployment issues by 65%.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    title: "Frontend Web Developer",
+    company_name: "New IT Nest Limited",
+    icon: newITLogo,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "September 2023 - March 2024",
     points: [
-      "It is just an example component section to display how the experiences will look like if I have had done any corporate jobs.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Delivered end-to-end custom web solutions for 5+ clients, focusing on user-centric design and accessibility standards (WCAG 2.1).",
+      "Integrated advanced back-end systems and RESTful APIs for seamless client-side functionality, improving data synchronization by 42%.",
+      "Successfully migrated 3 legacy applications to cloud platforms ensuring enhanced scalability and performance with 99.9% uptime.",
+      "Optimized website performance through code refactoring and asset optimization, achieving a 30% reduction in load times.",
+      "Implemented responsive design principles across all projects, ensuring seamless experiences across desktop, tablet, and mobile devices.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
+    title: "Freelance Frontend Developer",
+    company_name: "Freelance",
+    icon: freelanceLogo,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "August 2022 - August 2023",
     points: [
-      "It is just an example component section to display how the experiences will look like if I have had done any corporate jobs.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "It is just an example component section to display how the experiences will look like if I have had done any corporate jobs.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed and delivered 10+ custom web solutions with a focus on user-friendly design and accessibility, receiving 4.8/5 average client satisfaction ratings.",
+      "Integrated advanced back-end systems and APIs, ensuring smooth and efficient client-side functionality for e-commerce and service-based businesses.",
+      "Led successful application migrations to cloud platforms, enhancing scalability and overall performance for 5 small business clients.",
+      "Utilized modern frameworks including React.js and Next.js to create dynamic, interactive web applications with reduced development time.",
+      "Maintained ongoing relationships with clients, providing technical support and implementing new features based on evolving business needs.",
     ],
   },
 ];

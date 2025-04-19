@@ -2,12 +2,77 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+      content="Anshuman Parmar - Full Stack & AI Developer specializing in modern web and AI solutions">
+    
+    <!-- Preconnect to Google Fonts to speed up font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/src/assets/logo.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="/src/index.css" as="style">
+    
+    <!-- Set favicon -->
+    <link rel="icon" type="image/svg+xml" href="/src/assets/logo.svg" />
+    
+    <!-- Set page title -->
     <title>Anshuman Parmar | Portfolio</title>
+    <!-- Add initial spinner style for immediate feedback -->
+    <style>
+      .initial-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background-color: #050816;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+      }
+    
+      .initial-loader::after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 255, 255, 0.1);
+        border-top-color: #915eff;
+        border-radius: 50%;
+        animation: spinner 1s ease-in-out infinite;
+      }
+    
+      @keyframes spinner {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body>
+    <!-- Initial loading indicator -->
+    <div class="initial-loader" id="initial-loader"></div>
     <div id="root"></div>
+    <!-- Load main script -->
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Remove initial loader once React hydrates -->
+    <script>
+      window.addEventListener('load', function () {
+        setTimeout(() => {
+          const loader = document.getElementById('initial-loader');
+          if (loader) {
+            loader.style.opacity = '0';
+            loader.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+              if (loader.parentNode) {
+                loader.parentNode.removeChild(loader);
+              }
+            }, 300);
+          }
+        }, 500);
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,80 @@
+// All the images are in assets folder
+// Description should be between 140-200 characters.
+// Tags will be decided by you only and a maximum of only three can be used at a time of tech used
+
+1. CrownKing
+
+image - crownking.png
+name - CrownKing 
+description - CrownKing is a full-stack e-commerce platform specializing in premium men's jewelry. The application offers a seamless shopping experience with a sleek, modern interface for customers to browse and purchase high-quality jewelry items.
+tags - Tags will be decided by you only and a maximum of only three can be used at a time of tech used
+link - https://crownking.vercel.app/
+github - https://github.com/anshumansp/CrownKing-Premium-Men-s-Jewellery-
+
+2. Kiaros
+
+image - kiaros.png
+name - Kiaros
+description - A comprehensive suite of productivity tools designed for professionals to streamline their workflow and boost efficiency.
+
+Tool Suite
+PDF Tools: Merge, split, compress, and convert PDF files
+Image Converter: Convert images between different formats (JPEG, PNG, WebP, GIF)
+Resume Builder: Create professional resumes with customizable templates
+More tools coming soon!
+Tech Stack
+Frontend: Next.js, TypeScript, Tailwind CSS, Framer Motion
+Backend: Node.js, Express, TypeScript
+Database: PostgreSQL
+Infrastructure: Docker, Nginx
+Features
+Modern, responsive UI with smooth animations
+Dark mode support
+Premium subscription model for advanced features
+Interactive chatbot assistant
+Mobile-optimized experience 
+tags - Tags will be decided by you only and a maximum of only three can be used at a time of tech used
+link - https://kiaros.vercel.app/
+github - https://github.com/anshumansp/Kiaros-Tools
+
+3. Pixelize
+
+image - pixelize.png
+name - Pixelize
+description - Pixelize is a modern and stylish digital agency Page. Designed for creative designers, agencies
+freelancers, photographer or any creative profession. It is fully responsive and retina/hi-dpi ready
+making it pixel sharp on any devices. It has animating stats section, working contact form, 
+stylish portfolio section and other features you will only find on premium html templates. 
+USING THE MAILCHIMP FORM
+tags - Tags will be decided by you only and a maximum of only three can be used at a time of tech used
+link - https://pixelizesolution.com
+github - https://github.com/anshumansp/Pixelize
+
+4. PhysioAI
+
+image - physio.png
+name - PhysioAI
+description - PhysioCare is a cutting-edge, AI-powered web application designed to streamline client management and enhance customer support for physiotherapists. Built in just a few minutes using Windsurf and Bolt.new, this platform leverages modern AI tools and frameworks to deliver a seamless experience for both therapists and their clients.
+tags - Tags will be decided by you only and a maximum of only three can be used at a time of tech used
+link - https://physio-care.vercel.app/
+github - https://github.com/anshumansp/PhysioCare
+
+5. Consultix
+
+image - chatbot.png
+name - Consultix
+description - An AI-powered business consultant using Deepseek Chat model, offering real-time expertise in strategy, tech, and management. Basically, this is a sophisticated AI-powered business and technology consulting platform that provides real-time advice on business strategy, market analysis, technical architecture, and project management.
+tags - Tags will be decided by you only and a maximum of only three can be used at a time of tech used
+link - https://consultix.netlify.app/
+github - https://github.com/anshumansp/Business_Consultant_Agent
+
+6. Vibe Chats
+
+image - vibes.png
+name - Vibes
+description - React app for messaging using socket io 
+tags - Tags will be decided by you only and a maximum of only three can be used at a time of tech used
+link - https://vibechats.vercel.app
+github - https://github.com/anshumansp/Vibe-Chat
+
+6. Remove Notex from existing portfolio
