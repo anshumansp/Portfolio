@@ -14,7 +14,7 @@ const ProjectSlider = () => {
   const rightProjects = [topProjects[3], topProjects[4]]; // Two right projects
 
   return (
-    <section className="relative w-full py-16 bg-black">
+    <section className="relative w-full py-16 bg-black overflow-hidden">
       {/* Section header */}
       <div className="container mx-auto px-8 mb-10">
         <motion.div
@@ -37,7 +37,7 @@ const ProjectSlider = () => {
       </div>
 
       {/* Staggered project showcase - desktop */}
-      <div className="hidden md:block relative max-w-[1400px] mx-auto h-[500px] px-16 mb-20">
+      <div className="hidden md:block relative max-w-[1400px] mx-auto h-[300px] px-16 mb-20">
         {/* Center project - largest */}
         <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 w-[460px]">
           <ProjectPreview
@@ -49,7 +49,7 @@ const ProjectSlider = () => {
         </div>
 
         {/* Left side projects - smaller and staggered */}
-        <div className="absolute left-[15%] top-1/2 transform -translate-y-1/2 -translate-x-1/5 z-20 w-[380px]">
+        <div className="absolute left-[15%] top-1/2 transform -translate-y-1/2 z-20 w-[380px]">
           <ProjectPreview
             project={leftProjects[0]}
             scale={0.85}
@@ -57,7 +57,7 @@ const ProjectSlider = () => {
             rotation={-5}
           />
         </div>
-        <div className="absolute left-[5%] top-1/2 transform -translate-y-1/2 -translate-x-1/4 z-10 w-[360px]">
+        <div className="absolute left-[5%] top-1/2 transform -translate-y-1/2 z-10 w-[360px]">
           <ProjectPreview
             project={leftProjects[1]}
             scale={0.7}
@@ -67,7 +67,7 @@ const ProjectSlider = () => {
         </div>
 
         {/* Right side projects - smaller and staggered */}
-        <div className="absolute right-[15%] top-1/2 transform -translate-y-1/2 translate-x-1/5 z-20 w-[380px]">
+        <div className="absolute right-[15%] top-1/2 transform -translate-y-1/2 z-20 w-[380px]">
           <ProjectPreview
             project={rightProjects[0]}
             scale={0.85}
@@ -75,7 +75,7 @@ const ProjectSlider = () => {
             rotation={5}
           />
         </div>
-        <div className="absolute right-[5%] top-1/2 transform -translate-y-1/2 translate-x-1/4 z-10 w-[360px]">
+        <div className="absolute right-[5%] top-1/2 transform -translate-y-1/2 z-10 w-[360px]">
           <ProjectPreview
             project={rightProjects[1]}
             scale={0.7}

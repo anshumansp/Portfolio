@@ -42,7 +42,7 @@ const App = () => {
   return (
     <MobileState>
       <BrowserRouter>
-        <div className="relative z-0 bg-black">
+        <div className="relative z-0 bg-black overflow-x-hidden">
           <div className="bg-none">
             <Navbar />
             <Suspense
