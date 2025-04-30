@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import MobileContext from "../context/mobileContext";
+import { indiaFlag, usaFlag, ukFlag } from "../assets";
 
 const Hero = () => {
   const isMobile = useContext(MobileContext);
-  
+
   const scrollToWork = (e) => {
     e.preventDefault();
     const workSection = document.getElementById("work");
@@ -13,6 +14,13 @@ const Hero = () => {
       workSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Country flag data with image sources and alt text
+  const countryFlags = [
+    { src: indiaFlag, alt: "India", title: "India" },
+    { src: usaFlag, alt: "United States", title: "United States" },
+    { src: ukFlag, alt: "United Kingdom", title: "United Kingdom" },
+  ];
 
   return (
     <section className="relative w-full min-h-screen mx-auto flex items-center justify-center pt-16">
@@ -74,7 +82,7 @@ const Hero = () => {
             </button>
           </motion.div>
 
-          {/* Trust badges/social proof - optional */}
+          {/* Trust badges/social proof with flag icons */}
           <motion.div
             className="flex flex-wrap justify-center gap-6 mt-16"
             initial={{ opacity: 0, y: 20 }}
@@ -85,16 +93,19 @@ const Hero = () => {
               Trusted by clients from
             </p>
             <div className="flex flex-wrap justify-center gap-8">
-              {["India", "United States", "UK", "Australia", "Germany"].map(
-                (country, index) => (
-                  <span
-                    key={index}
-                    className="text-gray-400 hover:text-white transition-colors duration-300"
-                  >
-                    {country}
-                  </span>
-                )
-              )}
+              {countryFlags.map((flag, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center"
+                  title={flag.title}
+                >
+                  <img
+                    src={flag.src}
+                    alt={flag.alt}
+                    className="w-10 h-6 object-cover rounded-sm hover:shadow-md hover:shadow-white/20 transition-all duration-300"
+                  />
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

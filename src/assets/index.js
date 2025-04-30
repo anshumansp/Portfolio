@@ -7,6 +7,11 @@ import github from "./github.webp";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
+// Country flags
+import indiaFlag from "./flags/india.svg";
+import usaFlag from "./flags/usa.svg";
+import ukFlag from "./flags/uk.svg";
+
 import css from "./tech/css.webp";
 import docker from "./tech/docker.webp";
 import figma from "./tech/figma.webp";
@@ -47,6 +52,9 @@ export {
   github,
   menu,
   close,
+  indiaFlag,
+  usaFlag,
+  ukFlag,
   css,
   docker,
   figma,
